@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>天地图影像下载</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/tianditu.css">
+    <script type="text/javascript" src="http://api.tianditu.gov.cn/api?v=4.0&tk=abd833b69fac00096820aca1c93804ca">
+    </script>
+    <script src="/static/js/tianditu.js"></script>
+</head>
+
+<body onLoad="onLoad()">
+    <div id="mapDiv"></div>
+    <div class="container">
+        <div>
+            <input class='bound_selector' type="button" value="框选影像范围" onClick='openRectangleTool()' />
+        </div>
+        <form id="coord_form">
+            <input id="tl_lng" class='coord_input' type="text" name="tl_lng" placeholder="左上经度" required="required">
+            <input id="tl_lat" class='coord_input' type="text" name="tl_lat" placeholder="左上纬度" required="required">
+            <input id="br_lng" class='coord_input' type="text" name="br_lng" placeholder="右下经度" required="required">
+            <input id="br_lat" class='coord_input' type="text" name="br_lat" placeholder="右下纬度" required="required">
+            <input id="zoom" class='coord_input' type="text" name="zoom" placeholder="缩放级别" required="required" value="12">
+            <input id="submit" name="submit" type="button" value="生成卫片" onClick='submitCoordForm()'>
+        </form>
+        <form id="result_form">
+            <input id="download_file_name" type="text" name="file_name" placeholder="缩放级别" required="required" value="">
+            <input class='image_downloader' type="button" value="下载卫片" onClick='downloadImage()' />
+        </form>
+    </div>
+</body>
+
+</html>
